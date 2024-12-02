@@ -1,0 +1,480 @@
+[gd_scene load_steps=16 format=3 uid="uid://cr571teb52s4u"]
+
+[ext_resource type="Script" path="res://Factory Scene/FactoryUI/factory_ui.gd" id="1_sltgv"]
+[ext_resource type="Texture2D" uid="uid://0y004mfvnkm6" path="res://Sprites/Eye.png" id="2_gxwnd"]
+[ext_resource type="Texture2D" uid="uid://b0yd1w45x2soq" path="res://Sprites/Pause.png" id="3_44uor"]
+[ext_resource type="FontFile" uid="uid://rybyv4bex3vf" path="res://pixeleum-48.ttf" id="4_464jk"]
+[ext_resource type="Texture2D" uid="uid://cx2lqk62rch54" path="res://Sprites/Play.png" id="4_awe0q"]
+[ext_resource type="Texture2D" uid="uid://dxyukledn2qnd" path="res://Sprites/Electricity.png" id="5_e8urr"]
+[ext_resource type="Texture2D" uid="uid://breysnxer5qt8" path="res://Sprites/Fire.png" id="6_54qrv"]
+[ext_resource type="Texture2D" uid="uid://cy5od5im8bcsy" path="res://Sprites/Cloudy.png" id="6_i6nyi"]
+[ext_resource type="Texture2D" uid="uid://03il0qic6ujo" path="res://Sprites/Worker.png" id="7_1mdy6"]
+[ext_resource type="Texture2D" uid="uid://gmnwgsxkm33c" path="res://Sprites/Gear.png" id="8_4i2y2"]
+[ext_resource type="Texture2D" uid="uid://v5lqt6s2dfeq" path="res://Sprites/World.png" id="8_kioov"]
+[ext_resource type="Texture2D" uid="uid://c6on3mfandr64" path="res://Sprites/Money.png" id="8_msg5y"]
+[ext_resource type="Texture2D" uid="uid://nhkd33xw6dma" path="res://Sprites/Microscope.png" id="9_loehp"]
+[ext_resource type="AudioStream" uid="uid://veewetr52st2" path="res://Music/TheFragranceOfDarkCoffee.mp3" id="14_v5mym"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wx1it"]
+bg_color = Color(0, 0, 0.396078, 0.0588235)
+
+[node name="Control" type="Control"]
+texture_filter = 1
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_sltgv")
+
+[node name="InfoTab" type="ReferenceRect" parent="."]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 60.0
+offset_bottom = 60.0
+
+[node name="InfoButton" type="Button" parent="InfoTab" groups=["CheckForMouseCovering"]]
+layout_mode = 0
+offset_right = 50.0
+offset_bottom = 50.0
+theme_override_fonts/font = ExtResource("4_464jk")
+icon = ExtResource("2_gxwnd")
+icon_alignment = 1
+
+[node name="PlaceTimeWeather" type="ReferenceRect" parent="."]
+layout_mode = 0
+offset_left = 70.0
+offset_top = 10.0
+offset_right = 870.0
+offset_bottom = 50.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PlaceTimeWeather"]
+layout_mode = 0
+offset_right = 800.0
+offset_bottom = 40.0
+
+[node name="Pause" type="Button" parent="PlaceTimeWeather/HBoxContainer" groups=["CheckForMouseCovering"]]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_464jk")
+theme_override_font_sizes/font_size = 23
+icon = ExtResource("3_44uor")
+
+[node name="TimeInfo" type="Button" parent="PlaceTimeWeather/HBoxContainer" groups=["CheckForMouseCovering"]]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_464jk")
+theme_override_font_sizes/font_size = 20
+text = "24:60 Sep 2059"
+
+[node name="Speed" type="Button" parent="PlaceTimeWeather/HBoxContainer" groups=["CheckForMouseCovering"]]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_464jk")
+theme_override_font_sizes/font_size = 23
+icon = ExtResource("4_awe0q")
+
+[node name="Sep1" type="VSeparator" parent="PlaceTimeWeather/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="PlaceInfo" type="Button" parent="PlaceTimeWeather/HBoxContainer" groups=["CheckForMouseCovering"]]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_464jk")
+theme_override_font_sizes/font_size = 20
+text = "South Africa"
+icon_alignment = 1
+
+[node name="Sep2" type="VSeparator" parent="PlaceTimeWeather/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Weather" type="Button" parent="PlaceTimeWeather/HBoxContainer" groups=["CheckForMouseCovering"]]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_464jk")
+theme_override_font_sizes/font_size = 20
+text = "25°C"
+icon = ExtResource("6_i6nyi")
+
+[node name="ElectricityHeatWorkers" type="ReferenceRect" parent="."]
+layout_mode = 0
+offset_left = 950.0
+offset_top = 10.0
+offset_right = 1850.0
+offset_bottom = 50.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ElectricityHeatWorkers"]
+layout_mode = 0
+offset_right = 900.0
+offset_bottom = 40.0
+alignment = 2
+
+[node name="Electricity" type="Button" parent="ElectricityHeatWorkers/HBoxContainer" groups=["CheckForMouseCovering"]]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_464jk")
+theme_override_font_sizes/font_size = 23
+icon = ExtResource("5_e8urr")
+
+[node name="ElectricityInfo" type="Button" parent="ElectricityHeatWorkers/HBoxContainer" groups=["CheckForMouseCovering"]]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_464jk")
+theme_override_font_sizes/font_size = 20
+text = "26MW / 75MW"
+
+[node name="Sep1" type="VSeparator" parent="ElectricityHeatWorkers/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Heat" type="Button" parent="ElectricityHeatWorkers/HBoxContainer" groups=["CheckForMouseCovering"]]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_464jk")
+theme_override_font_sizes/font_size = 25
+icon = ExtResource("6_54qrv")
+icon_alignment = 1
+
+[node name="HeatInfo" type="Button" parent="ElectricityHeatWorkers/HBoxContainer" groups=["CheckForMouseCovering"]]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_464jk")
+theme_override_font_sizes/font_size = 20
+text = "25.7MJ / 40MJ"
+icon_alignment = 1
+
+[node name="Sep2" type="VSeparator" parent="ElectricityHeatWorkers/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Workers" type="Button" parent="ElectricityHeatWorkers/HBoxContainer" groups=["CheckForMouseCovering"]]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_464jk")
+theme_override_font_sizes/font_size = 25
+icon = ExtResource("7_1mdy6")
+icon_alignment = 1
+
+[node name="WorkersInfo" type="Button" parent="ElectricityHeatWorkers/HBoxContainer" groups=["CheckForMouseCovering"]]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_464jk")
+theme_override_font_sizes/font_size = 20
+text = "1523 / 1600"
+icon_alignment = 1
+
+[node name="SettingsTab" type="ReferenceRect" parent="."]
+layout_mode = 0
+offset_left = 1860.0
+offset_top = 10.0
+offset_right = 1910.0
+offset_bottom = 60.0
+
+[node name="SettingsButton" type="Button" parent="SettingsTab" groups=["CheckForMouseCovering"]]
+layout_mode = 0
+offset_right = 50.0
+offset_bottom = 50.0
+theme_override_fonts/font = ExtResource("4_464jk")
+theme_override_font_sizes/font_size = 34
+icon = ExtResource("8_4i2y2")
+icon_alignment = 1
+
+[node name="BottomBar" type="Panel" parent="." groups=["CheckForMouseCovering"]]
+layout_mode = 0
+offset_top = 980.0
+offset_right = 1920.0
+offset_bottom = 1080.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_wx1it")
+
+[node name="Map" type="ReferenceRect" parent="."]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 990.0
+offset_right = 95.0
+offset_bottom = 1070.0
+
+[node name="MapButton" type="Button" parent="Map"]
+layout_mode = 0
+offset_right = 80.0
+offset_bottom = 80.0
+theme_override_fonts/font = ExtResource("4_464jk")
+theme_override_font_sizes/font_size = 45
+icon = ExtResource("8_kioov")
+icon_alignment = 1
+
+[node name="Money" type="ReferenceRect" parent="."]
+layout_mode = 0
+offset_left = 110.0
+offset_top = 1000.0
+offset_right = 270.0
+offset_bottom = 1060.0
+
+[node name="MoneyInfo" type="Button" parent="Money"]
+layout_mode = 0
+offset_right = 160.0
+offset_bottom = 60.0
+theme_override_fonts/font = ExtResource("4_464jk")
+theme_override_font_sizes/font_size = 20
+text = "67,983,45"
+icon = ExtResource("8_msg5y")
+
+[node name="Science" type="ReferenceRect" parent="."]
+layout_mode = 0
+offset_left = 280.0
+offset_top = 1000.0
+offset_right = 440.0
+offset_bottom = 1060.0
+
+[node name="ScienceInfo" type="Button" parent="Science"]
+layout_mode = 0
+offset_right = 160.0
+offset_bottom = 60.0
+theme_override_fonts/font = ExtResource("4_464jk")
+theme_override_font_sizes/font_size = 20
+text = "32545"
+icon = ExtResource("9_loehp")
+
+[node name="BuildMenu" type="ReferenceRect" parent="."]
+layout_mode = 0
+offset_left = 470.0
+offset_top = 1000.0
+offset_right = 1470.0
+offset_bottom = 1060.0
+
+[node name="FactoryToggle" type="Button" parent="BuildMenu"]
+layout_mode = 2
+offset_right = 60.0
+offset_bottom = 60.0
+theme_override_fonts/font = ExtResource("4_464jk")
+theme_override_font_sizes/font_size = 30
+text = "F"
+icon_alignment = 1
+
+[node name="UpgradeToggle" type="Button" parent="BuildMenu"]
+layout_mode = 2
+offset_left = 70.0
+offset_right = 130.0
+offset_bottom = 60.0
+theme_override_fonts/font = ExtResource("4_464jk")
+theme_override_font_sizes/font_size = 30
+text = "U
+"
+icon_alignment = 1
+
+[node name="SellToggle" type="Button" parent="BuildMenu"]
+layout_mode = 2
+offset_left = 140.0
+offset_right = 200.0
+offset_bottom = 60.0
+theme_override_fonts/font = ExtResource("4_464jk")
+theme_override_font_sizes/font_size = 30
+text = "S"
+icon_alignment = 1
+
+[node name="ConveyerToggle" type="Button" parent="BuildMenu"]
+layout_mode = 2
+offset_left = 210.0
+offset_right = 270.0
+offset_bottom = 60.0
+theme_override_fonts/font = ExtResource("4_464jk")
+theme_override_font_sizes/font_size = 30
+text = "C"
+icon_alignment = 1
+
+[node name="BuildTabs" type="ReferenceRect" parent="."]
+layout_mode = 0
+offset_left = 260.0
+offset_top = 750.0
+offset_right = 1660.0
+offset_bottom = 965.0
+
+[node name="FactoryTab" type="ItemList" parent="BuildTabs"]
+visible = false
+layout_mode = 0
+offset_right = 1400.0
+offset_bottom = 215.0
+theme_override_fonts/font = ExtResource("4_464jk")
+theme_override_font_sizes/font_size = 20
+max_text_lines = 2
+max_columns = 8
+fixed_column_width = 160
+icon_mode = 0
+fixed_icon_size = Vector2i(96, 96)
+
+[node name="UpgradesTab" type="ItemList" parent="BuildTabs"]
+visible = false
+layout_mode = 0
+offset_right = 1400.0
+offset_bottom = 215.0
+theme_override_fonts/font = ExtResource("4_464jk")
+theme_override_font_sizes/font_size = 20
+max_text_lines = 2
+max_columns = 8
+fixed_column_width = 160
+icon_mode = 0
+fixed_icon_size = Vector2i(96, 96)
+
+[node name="SellingTab" type="ItemList" parent="BuildTabs"]
+visible = false
+layout_mode = 0
+offset_right = 1400.0
+offset_bottom = 215.0
+theme_override_fonts/font = ExtResource("4_464jk")
+theme_override_font_sizes/font_size = 20
+max_text_lines = 2
+max_columns = 8
+fixed_column_width = 160
+icon_mode = 0
+fixed_icon_size = Vector2i(96, 96)
+
+[node name="ConveryersTab" type="ItemList" parent="BuildTabs"]
+visible = false
+layout_mode = 0
+offset_right = 1400.0
+offset_bottom = 215.0
+theme_override_fonts/font = ExtResource("4_464jk")
+theme_override_font_sizes/font_size = 20
+max_text_lines = 2
+max_columns = 8
+fixed_column_width = 160
+icon_mode = 0
+fixed_icon_size = Vector2i(96, 96)
+
+[node name="BrushMenu" type="ReferenceRect" parent="."]
+layout_mode = 0
+offset_left = 1570.0
+offset_top = 1000.0
+offset_right = 1730.0
+offset_bottom = 1060.0
+
+[node name="Single" type="Button" parent="BrushMenu"]
+layout_mode = 0
+offset_right = 39.0
+offset_bottom = 60.0
+theme_override_fonts/font = ExtResource("4_464jk")
+theme_override_font_sizes/font_size = 30
+icon_alignment = 1
+
+[node name="Label" type="Label" parent="BrushMenu/Single"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = -11.0
+offset_right = 34.0
+offset_bottom = 59.0
+theme_override_font_sizes/font_size = 50
+text = "●"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Line" type="Button" parent="BrushMenu"]
+layout_mode = 0
+offset_left = 40.0
+offset_right = 79.0
+offset_bottom = 60.0
+theme_override_fonts/font = ExtResource("4_464jk")
+theme_override_font_sizes/font_size = 30
+icon_alignment = 1
+
+[node name="Label" type="Label" parent="BrushMenu/Line"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = -12.0
+offset_right = 34.0
+offset_bottom = 58.0
+theme_override_font_sizes/font_size = 50
+text = "┃"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="DoubleLine" type="Button" parent="BrushMenu"]
+layout_mode = 0
+offset_left = 80.0
+offset_right = 119.0
+offset_bottom = 60.0
+theme_override_fonts/font = ExtResource("4_464jk")
+theme_override_font_sizes/font_size = 30
+icon_alignment = 1
+
+[node name="Label" type="Label" parent="BrushMenu/DoubleLine"]
+layout_mode = 0
+offset_top = -12.0
+offset_right = 30.0
+offset_bottom = 58.0
+theme_override_font_sizes/font_size = 50
+text = "┃"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="BrushMenu/DoubleLine"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = -12.0
+offset_right = 40.0
+offset_bottom = 58.0
+theme_override_font_sizes/font_size = 50
+text = "┃"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TripleLine" type="Button" parent="BrushMenu"]
+layout_mode = 0
+offset_left = 120.0
+offset_right = 159.0
+offset_bottom = 60.0
+theme_override_fonts/font = ExtResource("4_464jk")
+theme_override_font_sizes/font_size = 30
+icon_alignment = 1
+
+[node name="Label" type="Label" parent="BrushMenu/TripleLine"]
+layout_mode = 0
+offset_left = -5.0
+offset_top = -12.0
+offset_right = 25.0
+offset_bottom = 58.0
+theme_override_font_sizes/font_size = 50
+text = "┃"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="BrushMenu/TripleLine"]
+layout_mode = 0
+offset_left = 5.0
+offset_top = -12.0
+offset_right = 35.0
+offset_bottom = 58.0
+theme_override_font_sizes/font_size = 50
+text = "┃"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label3" type="Label" parent="BrushMenu/TripleLine"]
+layout_mode = 0
+offset_left = 15.0
+offset_top = -12.0
+offset_right = 45.0
+offset_bottom = 58.0
+theme_override_font_sizes/font_size = 50
+text = "┃"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ExtendedMenuTwo" type="ReferenceRect" parent="."]
+layout_mode = 0
+offset_left = 1740.0
+offset_top = 1000.0
+offset_right = 1900.0
+offset_bottom = 1060.0
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(960, 540)
+stream = ExtResource("14_v5mym")
+
+[connection signal="pressed" from="BuildMenu/FactoryToggle" to="." method="_on_factory_toggle_pressed"]
+[connection signal="pressed" from="BuildMenu/UpgradeToggle" to="." method="_on_upgrade_toggle_pressed"]
+[connection signal="pressed" from="BuildMenu/SellToggle" to="." method="_on_sell_toggle_pressed"]
+[connection signal="pressed" from="BuildMenu/ConveyerToggle" to="." method="_on_conveyer_toggle_pressed"]
+[connection signal="item_clicked" from="BuildTabs/FactoryTab" to="." method="_on_tab_item_clicked"]
+[connection signal="mouse_entered" from="BuildTabs/FactoryTab" to="." method="_on_tab_mouse_entered"]
+[connection signal="mouse_exited" from="BuildTabs/FactoryTab" to="." method="_on_tab_mouse_exited"]
+[connection signal="item_clicked" from="BuildTabs/UpgradesTab" to="." method="_on_tab_item_clicked"]
+[connection signal="mouse_entered" from="BuildTabs/UpgradesTab" to="." method="_on_tab_mouse_entered"]
+[connection signal="mouse_exited" from="BuildTabs/UpgradesTab" to="." method="_on_tab_mouse_exited"]
+[connection signal="item_clicked" from="BuildTabs/SellingTab" to="." method="_on_tab_item_clicked"]
+[connection signal="mouse_entered" from="BuildTabs/SellingTab" to="." method="_on_tab_mouse_entered"]
+[connection signal="mouse_exited" from="BuildTabs/SellingTab" to="." method="_on_tab_mouse_exited"]
+[connection signal="item_clicked" from="BuildTabs/ConveryersTab" to="." method="_on_tab_item_clicked"]
+[connection signal="mouse_entered" from="BuildTabs/ConveryersTab" to="." method="_on_tab_mouse_entered"]
+[connection signal="mouse_exited" from="BuildTabs/ConveryersTab" to="." method="_on_tab_mouse_exited"]
